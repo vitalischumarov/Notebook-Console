@@ -73,9 +73,24 @@ void handleUserInput(int op)
     switch (op)
     {
         case 1:
-            foreach (Note note in notes)
+            if (notes.Count == 0)
             {
-                System.Console.WriteLine(note.title);
+                System.Console.WriteLine("-------------------");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("No notes available.");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("-------------------");
+            }
+            else
+            {
+                foreach (Note note in notes)
+                {
+                    System.Console.WriteLine("-------------------");
+                    System.Console.WriteLine("");
+                    System.Console.WriteLine($"Title: {note.title}");
+                    System.Console.WriteLine("");
+                    System.Console.WriteLine("-------------------");
+                }
             }
             break;
         case 2:
