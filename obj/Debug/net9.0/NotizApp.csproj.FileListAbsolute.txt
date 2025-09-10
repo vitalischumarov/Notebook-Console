@@ -1,0 +1,15 @@
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.AssemblyInfoInputs.cache
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.AssemblyInfo.cs
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.csproj.CoreCompileInputs.cache
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.sourcelink.json
+/Users/vitali/Desktop/code/example/NotizApp/bin/Debug/net9.0/NotizApp
+/Users/vitali/Desktop/code/example/NotizApp/bin/Debug/net9.0/NotizApp.deps.json
+/Users/vitali/Desktop/code/example/NotizApp/bin/Debug/net9.0/NotizApp.runtimeconfig.json
+/Users/vitali/Desktop/code/example/NotizApp/bin/Debug/net9.0/NotizApp.dll
+/Users/vitali/Desktop/code/example/NotizApp/bin/Debug/net9.0/NotizApp.pdb
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.dll
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/refint/NotizApp.dll
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.pdb
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/NotizApp.genruntimeconfig.cache
+/Users/vitali/Desktop/code/example/NotizApp/obj/Debug/net9.0/ref/NotizApp.dll
