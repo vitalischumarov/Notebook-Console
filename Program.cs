@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 
 List<Note> notes = new List<Note>();
 bool notesFileAvailable;
@@ -45,29 +47,6 @@ void displayMenue()
     System.Console.WriteLine("[0] : Cancel");
 }
 
-void createNote(int id, string title, string description)
-{
-    Note newNote = new Note(id, title, description);
-    notes.Add(newNote);
-    System.Console.WriteLine($"Notes: {notes.Count}");
-}
-;
-
-void deleteNote()
-{
-    
-};
-
-void getAllNotes()
-{
-    
-};
-
-void searchNote()
-{
-
-};
-
 void handleUserInput(int op)
 {
     switch (op)
@@ -104,6 +83,7 @@ void handleUserInput(int op)
             Random rnd = new Random();
             int id = rnd.Next(1, 100);
             createNote(id, title, description);
+            checkJsonFile();
             break;
         case 4:
             System.Console.WriteLine("Input was 4");
@@ -112,4 +92,47 @@ void handleUserInput(int op)
             System.Console.WriteLine("Wrong operator.");
             break;
     }
+}
+
+void createNote(int id, string title, string description)
+{
+    Note newNote = new Note(id, title, description);
+    System.Console.WriteLine($"New note ID is: {newNote.id}");
+    notes.Add(newNote);
+    System.Console.WriteLine($"Number of notes: {notes.Count}");
+};
+
+void deleteNote()
+{
+    
+};
+
+void getAllNotes()
+{
+    
+};
+
+void searchNote()
+{
+
+};
+
+void checkJsonFile()
+{
+    if (File.Exists("Notes.json"))
+    {
+        saveNotesToJson();
+    }
+    else
+    {
+        File.Create("Notes.json");
+        saveNotesToJson();
+    }
+};
+
+void saveNotesToJson()
+{
+    string jsonString = JsonSerializer.Serialize(notes);
+    System.Console.WriteLine($"Json-String {jsonString}");
+    File.WriteAllText("Notes.json", jsonString);
 }

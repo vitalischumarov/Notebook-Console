@@ -1,8 +1,8 @@
 public class Note
 {
-    public int id;
-    public string title;
-    public string description;
+    public int id { get; set; }
+    public string title { get; set; }
+    public string description { get; set; }
 
     public Note(int _id, string _title, string _description)
     {

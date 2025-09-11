@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NotizApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+deee5409523185d4b7bbab341de4e22fcbc813fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9336d6a2564be37593b2661f81a99c7d809cb6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("NotizApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NotizApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
