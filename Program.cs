@@ -53,28 +53,13 @@ void handleUserInput(int op)
     switch (op)
     {
         case 1:
-            if (notes.Count == 0)
-            {
-                System.Console.WriteLine("-------------------");
-                System.Console.WriteLine("");
-                System.Console.WriteLine("No notes available.");
-                System.Console.WriteLine("");
-                System.Console.WriteLine("-------------------");
-            }
-            else
-            {
-                foreach (Note note in notes)
-                {
-                    System.Console.WriteLine("-------------------");
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine($"Title: {note.title}");
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("-------------------");
-                }
-            }
+            getAllNotes();
             break;
         case 2:
-            System.Console.WriteLine("Input was 2");
+            System.Console.Write("Enter an ID: ");
+            string input = Console.ReadLine();
+            int inputAsInt = int.Parse(input);
+            searchNote(inputAsInt);
             break;
         case 3:
             System.Console.Write("Title: ");
@@ -119,24 +104,50 @@ void loadAllNotes()
 void createNote(int id, string title, string description)
 {
     Note newNote = new Note(id, title, description);
-    System.Console.WriteLine($"New note ID is: {newNote.id}");
     notes.Add(newNote);
-    System.Console.WriteLine($"Number of notes: {notes.Count}");
 };
 
-void deleteNote()
+void deleteNote(int note_id)
 {
-    
+
 };
 
 void getAllNotes()
 {
-    
+     if (notes.Count == 0)
+            {
+                System.Console.WriteLine("-------------------");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("No notes available.");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("-------------------");
+            }
+            else
+            {
+                foreach (Note note in notes)
+                {
+                    System.Console.WriteLine("-------------------");
+                    System.Console.WriteLine("");
+                    System.Console.WriteLine($"ID: {note.id}");
+                    System.Console.WriteLine($"Title: {note.title}");
+                    System.Console.WriteLine("");
+                    System.Console.WriteLine("-------------------");
+                }
+            }
 };
 
-void searchNote()
+void searchNote(int note_id)
 {
-
+    Note note = notes.FirstOrDefault(note => note.id == note_id);
+    if (note != null)
+    {
+        System.Console.WriteLine($"Note title: {note.title}");
+        System.Console.WriteLine($"Note description: {note.description}");
+    }
+    else
+    {
+        System.Console.WriteLine("Note was not found.");
+    }
 };
 
 void checkJsonFile()

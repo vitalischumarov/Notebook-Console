@@ -11,5 +11,6 @@ public class Note
         description = _description;
     }
 
-    public Note() {}
+    public Note() { }
+    //wenn ich Daten eserialize will, brauche ich ein leeren Konstruktor.
 }
