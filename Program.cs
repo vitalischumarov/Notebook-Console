@@ -59,7 +59,11 @@ void handleUserInput(int op)
             System.Console.Write("Enter an ID: ");
             string input = Console.ReadLine();
             int inputAsInt = int.Parse(input);
-            searchNote(inputAsInt);
+            Note n = searchNote(inputAsInt);
+            System.Console.WriteLine("-----------------");
+            System.Console.WriteLine($"ID: {n.id}");
+            System.Console.WriteLine($"Title: {n.title}");
+            System.Console.WriteLine($"Description: {n.description}");
             break;
         case 3:
             System.Console.Write("Title: ");
@@ -72,7 +76,11 @@ void handleUserInput(int op)
             checkJsonFile();
             break;
         case 4:
-            System.Console.WriteLine("Input was 4");
+            System.Console.Write("Enter an ID: ");
+            string inputDelete = Console.ReadLine();
+            int inputAsIntDelete = int.Parse(inputDelete);
+            deleteNote(inputAsIntDelete);
+            saveNotesToJson();
             break;
         default:
             System.Console.WriteLine("Wrong operator.");
@@ -109,8 +117,18 @@ void createNote(int id, string title, string description)
 
 void deleteNote(int note_id)
 {
-
-};
+    Note note = searchNote(note_id);
+    bool result = notes.Remove(note);
+    if (result)
+    {
+        System.Console.WriteLine("deleted");
+    }
+    else
+    {
+        System.Console.WriteLine("not found");
+    }
+}
+;
 
 void getAllNotes()
 {
@@ -136,17 +154,17 @@ void getAllNotes()
             }
 };
 
-void searchNote(int note_id)
+Note searchNote(int note_id)
 {
     Note note = notes.FirstOrDefault(note => note.id == note_id);
     if (note != null)
     {
-        System.Console.WriteLine($"Note title: {note.title}");
-        System.Console.WriteLine($"Note description: {note.description}");
+        return note;
     }
     else
     {
         System.Console.WriteLine("Note was not found.");
+        return new Note();
     }
 };
 

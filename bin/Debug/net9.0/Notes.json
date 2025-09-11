@@ -1,1 +1,7 @@
-[{"id":88,"title":"Programmieren lernen","description":"I need to learn how to code usefull applications."},{"id":96,"title":"Faith","description":"God is my refuges. I need to trust in him daily."}]
+[
+    {
+        "id": 96,
+        "title": "Faith",
+        "description": "God is my refuges. I need to trust in him daily."
+    }
+]
