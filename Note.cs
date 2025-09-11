@@ -10,4 +10,6 @@ public class Note
         title = _title;
         description = _description;
     }
+
+    public Note() {}
 }

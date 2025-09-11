@@ -5,6 +5,7 @@ using System.Text.Json;
 
 List<Note> notes = new List<Note>();
 bool notesFileAvailable;
+loadAllNotes();
 
 if (File.Exists("Notes.json"))
 {
@@ -91,6 +92,27 @@ void handleUserInput(int op)
         default:
             System.Console.WriteLine("Wrong operator.");
             break;
+    }
+}
+
+void loadAllNotes()
+{
+    if (File.Exists("Notes.json"))
+    {
+        string json = File.ReadAllText("Notes.json");
+        if (string.IsNullOrEmpty(json))
+        {
+            System.Console.WriteLine("File is empty.");
+        }
+        else
+        {
+            notes = JsonSerializer.Deserialize<List<Note>>(json)!;
+            System.Console.WriteLine("notes loaded..");
+        }
+    }
+    else
+    {
+        System.Console.WriteLine("Notes not available.");
     }
 }
 
